@@ -1,0 +1,24 @@
+2025-03-20 19:56:23,097 - main - INFO - Iniciando proceso de web scraping
+2025-03-20 19:56:29,573 - main - INFO - Se extrajeron 6 productos
+2025-03-20 19:56:29,576 - main - INFO - Reporte generado y guardado en reports/productos_20250320_195629.txt
+2025-03-20 19:56:31,872 - main - INFO - Proceso de web scraping finalizado
+2025-03-20 20:07:47,718 - main - INFO - Iniciando proceso de web scraping
+2025-03-20 20:07:52,751 - main - INFO - Se extrajeron 6 productos
+2025-03-20 20:07:52,753 - main - INFO - Reporte generado y guardado en reports/productos_20250320_200752.txt
+2025-03-20 20:07:54,989 - main - INFO - Proceso de web scraping finalizado
+2025-03-20 20:08:57,904 - main - INFO - Iniciando proceso de web scraping
+2025-03-20 20:09:03,613 - main - INFO - Se extrajeron 6 productos
+2025-03-20 20:09:03,615 - main - INFO - Reporte generado y guardado en reports/productos_20250320_200903.txt
+2025-03-20 20:09:05,887 - main - INFO - Proceso de web scraping finalizado
+2025-03-20 20:10:04,014 - main - INFO - Iniciando proceso de web scraping
+2025-03-20 20:10:09,443 - main - INFO - Se extrajeron 6 productos
+2025-03-20 20:10:09,446 - main - INFO - Reporte generado y guardado en reports/productos_20250320_201009.txt
+2025-03-20 20:10:11,687 - main - INFO - Proceso de web scraping finalizado
+2025-03-20 20:11:34,993 - main - INFO - Iniciando proceso de web scraping
+2025-03-20 20:11:40,020 - main - INFO - Se extrajeron 6 productos
+2025-03-20 20:11:40,023 - main - INFO - Reporte generado y guardado en reports/productos_20250320_201140.txt
+2025-03-20 20:11:42,257 - main - INFO - Proceso de web scraping finalizado
+2025-03-20 20:17:16,002 - main - INFO - Iniciando proceso de web scraping
+2025-03-20 20:17:20,586 - main - INFO - Se extrajeron 6 productos
+2025-03-20 20:17:20,588 - main - INFO - Reporte generado y guardado en reports/productos_20250320_201720.txt
+2025-03-20 20:17:22,810 - main - INFO - Proceso de web scraping finalizado
