@@ -6,7 +6,7 @@ import argparse
 import os
 
 
-# Configurar logger
+# Set up logger
 logger = setup_logger('main')
 
 def parse_arguments():
@@ -26,23 +26,23 @@ def main():
     
     logger.info("Iniciando proceso de web scraping")
     
-    # Inicializar scraper y base de datos
+    # Initialize scraper and database
     scraper = SauceLabsScraper()
     db = Database()
     
     try:
-        # Iniciar driver y hacer login
+        # Start driver and log in
         scraper.start_driver()
         scraper.login()
         
-        # Extraer productos
+        # Extract products
         products = scraper.extract_products()
         logger.info(f"Se extrajeron {len(products)} productos")
         
-        # Generar reporte
+        # Generate report
         report = generate_report(products, args.report)
         
-        # Guardar reporte en archivo
+        # Save report to file
         report_dir = 'reports'
         if not os.path.exists(report_dir):
             os.makedirs(report_dir)
@@ -55,36 +55,36 @@ def main():
         
         logger.info(f"Reporte generado y guardado en {report_path}")
         
-        # Guardar en base de datos si se solicita
+        # Save to database if requested
         if args.save:
-            # Conectar a la base de datos
+            # Connect to the database
             if db.connect():
-                # Guardar productos
+                # Save products
                 db.save_products(products)
                 logger.info("Productos guardados en la base de datos")
             else:
                 logger.error("No se pudo conectar a la base de datos")
         
-        # Realizar checkout si se solicita
+        # Perform checkout if requested
         if args.checkout:
-            # Elegir algunos productos para añadir al carrito
-            products_to_add = [p["id"] for p in products[:2]]  # Añadir los primeros 2 productos
+            # Select some products to add to the cart
+            products_to_add = [p["id"] for p in products[:2]]  # Add the first 2 products
             
             if scraper.add_to_cart(products_to_add):
-                # Información del cliente
+                # Customer information
                 customer_info = {
                     "first_name": "Test",
                     "last_name": "User",
                     "postal_code": "12345"
                 }
                 
-                # Realizar checkout
+                # Perform checkout
                 checkout_result = scraper.checkout(customer_info)
                 
                 if checkout_result.get("status") == "completed":
                     logger.info("Checkout completado correctamente")
                     
-                    # Guardar orden en base de datos si está conectada
+                    # Save order to the database if connected
                     if args.save and db.connection:
                         order_id = db.save_order(customer_info, products_to_add, checkout_result)
                         if order_id:
@@ -97,7 +97,7 @@ def main():
     except Exception as e:
         logger.error(f"Error en el proceso principal: {e}")
     finally:
-        # Cerrar navegador y base de datos
+        # Close browser and database
         scraper.close()
         if args.save:
             db.close()

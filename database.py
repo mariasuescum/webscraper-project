@@ -23,12 +23,12 @@ class Database:
             self.cursor = self.connection.cursor()
             logger.info("Conexión a MySQL establecida")
             
-            # Crear base de datos si no existe
+            # Create database if it does not exist
             self.cursor.execute(f"CREATE DATABASE IF NOT EXISTS {DB_CONFIG['database']}")
             self.cursor.execute(f"USE {DB_CONFIG['database']}")
             logger.info(f"Base de datos {DB_CONFIG['database']} seleccionada")
             
-            # Crear tablas necesarias
+            # Create necessary tables
             self._create_tables()
             
             return True
@@ -39,7 +39,7 @@ class Database:
     def _create_tables(self):
         """Crea las tablas necesarias en la base de datos"""
         try:
-            # Tabla de productos
+            # Products table
             self.cursor.execute('''
                 CREATE TABLE IF NOT EXISTS products (
                     id VARCHAR(100) PRIMARY KEY,
@@ -51,7 +51,7 @@ class Database:
                 )
             ''')
             
-            # Tabla de órdenes/compras
+            # Orders/Purchases table
             self.cursor.execute('''
                 CREATE TABLE IF NOT EXISTS orders (
                     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -64,7 +64,7 @@ class Database:
                 )
             ''')
             
-            # Tabla de relación entre órdenes y productos
+            # Order-Product relationship table
             self.cursor.execute('''
                 CREATE TABLE IF NOT EXISTS order_products (
                     order_id INT,
@@ -85,7 +85,7 @@ class Database:
         """Guarda los productos extraídos en la base de datos"""
         try:
             for product in products:
-                # Verificar si el producto ya existe
+                # Check if the product already exists**
                 self.cursor.execute(
                     "SELECT id FROM products WHERE id = %s",
                     (product["id"],)
@@ -93,7 +93,7 @@ class Database:
                 result = self.cursor.fetchone()
                 
                 if result:
-                    # Actualizar producto existente
+                    # Update existing product
                     self.cursor.execute(
                         """
                         UPDATE products 
@@ -110,7 +110,7 @@ class Database:
                     )
                     logger.info(f"Producto {product['id']} actualizado")
                 else:
-                    # Insertar nuevo producto
+                    # Insert new product
                     self.cursor.execute(
                         """
                         INSERT INTO products (id, name, description, price, img_url)
@@ -137,10 +137,10 @@ class Database:
     def save_order(self, customer_info, product_ids, checkout_info):
         """Guarda la información de una orden en la base de datos"""
         try:
-            # Extraer el total como número
+            # Extract the total as a number
             total = checkout_info.get("total", "0").replace("Total: $", "")
             
-            # Insertar orden
+            # Insert order
             self.cursor.execute(
                 """
                 INSERT INTO orders (first_name, last_name, postal_code, total, status)
@@ -155,10 +155,10 @@ class Database:
                 )
             )
             
-            # Obtener ID de la orden insertada
+            # Get the ID of the inserted order
             order_id = self.cursor.lastrowid
             
-            # Insertar relaciones entre orden y productos
+            # Insert relationships between order and products
             for product_id in product_ids:
                 self.cursor.execute(
                     """
@@ -182,7 +182,7 @@ class Database:
             self.cursor.execute("SELECT * FROM products")
             products = self.cursor.fetchall()
             
-            # Convertir a lista de diccionarios
+            # Convert to list of dictionaries
             columns = [col[0] for col in self.cursor.description]
             product_list = []
             
