@@ -1,2 +1,27 @@
 # Ignorar el archivo .env
 .env
+
+# Archivos y carpetas de Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Entorno virtual
+venv/
+env/
+
+# Archivos de configuración y credenciales
+*.env
+secrets.json
+config.yaml
+
+# Archivos de logs y reportes
+logs/
+*.log
+reports/
+
+# Archivos de base de datos
+database.db
+
+# Dependencias de Python que pueden regenerarse con requirements.txt
+*.egg-info/

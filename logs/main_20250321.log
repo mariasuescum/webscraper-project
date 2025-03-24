@@ -18,3 +18,7 @@
 2025-03-21 07:16:51,252 - main - INFO - Se extrajeron 6 productos
 2025-03-21 07:16:51,257 - main - INFO - Reporte generado y guardado en reports/productos_20250321_071651.txt
 2025-03-21 07:16:53,773 - main - INFO - Proceso de web scraping finalizado
+2025-03-21 09:25:00,148 - main - INFO - Iniciando proceso de web scraping
+2025-03-21 09:25:07,155 - main - INFO - Se extrajeron 6 productos
+2025-03-21 09:25:07,157 - main - INFO - Reporte generado y guardado en reports/productos_20250321_092507.txt
+2025-03-21 09:25:09,425 - main - INFO - Proceso de web scraping finalizado

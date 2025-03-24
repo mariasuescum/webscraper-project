@@ -1,9 +1,9 @@
 import mysql.connector
-from config import DB_CONFIG
 import logging
+from config import DB_CONFIG
 from utils import setup_logger
 
-# Configurar logger
+# Configure logger
 logger = setup_logger('database')
 
 class Database:
