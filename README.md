@@ -62,6 +62,12 @@ Esto abrirá un navegador, iniciará sesión en SauceDemo, extraerá informació
 
 ---
 
+##  🏆 Gestión del proyecto con Scrum y Trello
+
+Se ha desarrollado siguiendo la metodología ágil Scrum, organizando tareas  y priorizando funcionalidades en un tablero de Trello. Esto nos ha permitido mejorar la productividad y la planificación del proyecto de manera eficiente.
+
+puedes revisar nuestro tablero de Trello en el siguiente enlace: [Enlace a Trello.](https://trello.com/b/lULZYm1B/scrapingproject). 
+
 ## 📄 Licencia
 Este proyecto está bajo la licencia MIT.
 
