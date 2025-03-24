@@ -1,9 +1,0 @@
-2025-03-21 18:14:44,218 - database - ERROR - Error al conectar con la base de datos: 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
-2025-03-21 18:14:44,377 - database - ERROR - Error al conectar con la base de datos: 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
-2025-03-21 18:14:44,377 - database - ERROR - Error al guardar productos: 'NoneType' object has no attribute 'execute'
-2025-03-21 18:17:10,692 - database - ERROR - Error al conectar con la base de datos: 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
-2025-03-21 18:17:10,845 - database - ERROR - Error al conectar con la base de datos: 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
-2025-03-21 18:17:10,847 - database - ERROR - Error al guardar productos: 'NoneType' object has no attribute 'execute'
-2025-03-21 18:19:18,044 - database - ERROR - Error al conectar con la base de datos: 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
-2025-03-21 18:19:18,187 - database - ERROR - Error al conectar con la base de datos: 1045 (28000): Access denied for user 'root'@'localhost' (using password: YES)
-2025-03-21 18:19:18,188 - database - ERROR - Error al guardar productos: 'NoneType' object has no attribute 'execute'
